@@ -9,7 +9,7 @@ Author: Stephan Kuschel
 '''
 
 
-from __future__ import absolute_import, division, print_function
+
 import os
 import warnings
 import glob
@@ -229,7 +229,7 @@ class IPreader(Infreader):
         print('Standard deviations for Scalefactors are', self.scalefactorsstd)
 
         # Plots the scalefactordistribution and scalefactors for each pixelvalue
-        self.scaleforpix = range(len(self.raw))
+        self.scaleforpix = list(range(len(self.raw)))
         for n in range(len(self.raw) - 1):
             A = self.getimgquotient(n)
             B = self._getrealimg(n + 1)
